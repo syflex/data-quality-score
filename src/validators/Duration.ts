@@ -1,12 +1,12 @@
 import { IStudyValidationService } from './Index.js';
-import { rules } from '../index.js';
+import { scores } from '../index.js';
 
 
 export default class Duration implements IStudyValidationService {
     private duration: string;
     private durationValue: number = 0;
     private level: string;
-    private score: number = rules.duration;
+    private score: number = scores.duration;
 
     constructor(Duration: string, DurationValue: number, Level: string) { 
         this.duration = Duration;

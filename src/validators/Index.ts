@@ -1,5 +1,5 @@
 import { Study } from '..';
-import ApplicationDeadline, { ApplicationDeadlineDataType } from './ApplicationDeadline.js';
+import ApplicationDeadline from './ApplicationDeadline.js';
 import StartDate from './StartDate.js';
 import Duration from './Duration.js';
 import Level from './Level.js';
@@ -13,14 +13,17 @@ export interface IStudyValidationService {
 }
 
 type ParamsType = 
-| [string, string] 
 | [string] 
+| [string, string]
 | [string, number, string] 
-| [TuitionTypes, TuitionValueType] 
-| [string] 
-| [string] 
-| [string] 
-| [string];
+| [TuitionTypes, TuitionValueType]
+
+type ValidationClassType = new (...args: any[]) => IStudyValidationService;
+
+type ValidationClass = {
+    class: ValidationClassType,
+    params: ParamsType
+}
 
 export default class ValidationManager{
     private score: number = 0;
@@ -36,7 +39,7 @@ export default class ValidationManager{
         });
     }
 
-    createValidationClasses(study: Study): Array<{ class: any, params: ParamsType }> {
+    createValidationClasses(study: Study): ValidationClass[] {
         return [
             { class: ApplicationDeadline, params: [study.ApplicationDeadline, study.StartDate] },
             { class: StartDate, params: [study.StartDate] },
@@ -48,8 +51,8 @@ export default class ValidationManager{
             { class: LastUpdated, params: [study.LastUpdated] },
         ];
     }
-
-    private createValidationInstance(ValidationClass: any, params: any[]): IStudyValidationService {
+    
+    private createValidationInstance(ValidationClass: ValidationClassType, params: ParamsType): IStudyValidationService {
         return new ValidationClass(...params);
     }
 

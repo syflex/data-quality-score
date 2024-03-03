@@ -1,7 +1,7 @@
-import ValidationManager from './validators/Index.js';
+import ValidationManager from './validation/Index.js';
 import studies from './data/studies.json' assert { type: 'json' };
 
-export const rules = {
+export const scores = {
     applicationDeadline: 20,
     last_updated_date: 10,
     startDate: 10,

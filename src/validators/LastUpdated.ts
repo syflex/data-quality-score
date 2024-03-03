@@ -1,10 +1,10 @@
 import { IStudyValidationService } from './Index.js';
-import { rules } from '../index.js';
+import { scores } from '../index.js';
 import { stringToDate } from '../lib/GeneralHelper.js';
 
 export default class LastUpdated implements IStudyValidationService {
     private lastUpdated: string;
-    private score: number = rules.last_updated_date;
+    private score: number = scores.last_updated_date;
 
     constructor(LastUpdated: string) { 
         this.lastUpdated = LastUpdated;

@@ -1,9 +1,9 @@
 import { IStudyValidationService } from './Index.js';
-import { rules } from '../index.js';
+import { scores } from '../index.js';
 
 export default class Description implements IStudyValidationService {
     private description: string;
-    private score: number = rules.level;
+    private score: number = scores.level;
 
     constructor(Description: string) { 
         this.description = Description;

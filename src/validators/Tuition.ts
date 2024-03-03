@@ -1,5 +1,5 @@
 import { IStudyValidationService } from './Index.js';
-import { rules } from '../index.js';
+import { scores } from '../index.js';
 import { ObjectValues, ObjectKeys } from '../lib/TypeHelpers.js';
 
 // TYPES
@@ -28,7 +28,7 @@ const maxTuitionValues: MaxTuitionValuesType = {
 export default class Tuition implements IStudyValidationService {
     private tuition: TuitionTypes;
     private tuitionValue?: TuitionValueType;
-    private score: number = rules.tuition;
+    private score: number = scores.tuition;
 
     constructor(tuition: TuitionTypes, tuitionValue?: TuitionValueType) { 
         this.tuition = tuition;

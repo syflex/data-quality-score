@@ -1,9 +1,9 @@
 import { IStudyValidationService } from './Index.js';
-import { rules } from '../index.js';
+import { scores } from './../index.js';
 
 export default class StartDate implements IStudyValidationService {
     private startDate: string;
-    private score: number = rules.startDate;
+    private score: number = scores.startDate;
 
     constructor(StartDate: string) { 
         this.startDate = StartDate;
