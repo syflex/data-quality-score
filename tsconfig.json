@@ -3,15 +3,15 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     "rootDir": "./src",
     "outDir": "./dist",
-    "moduleDetection": "force",
+    // "moduleDetection": "force",
 
     /* Language and Environment */
     "target": "ESNext",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     
     /* Modules */
     "module": "ESNext",                                /* Specify what module code is generated. */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
-    "moduleResolution": "node",                   /* Allow accessing UMD globals from modules. */
+    // "rootDir": "./",                                 /* Specify the root folder within your source files. */
+    "moduleResolution": "node",                         /* Allow accessing UMD globals from modules. */
     "resolveJsonModule": true,                          /* Disallow `import`s, `require`s or `<reference>`s from expanding the number of files TypeScript should add to a project. */
               
 
