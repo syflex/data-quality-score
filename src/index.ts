@@ -1,4 +1,4 @@
-import ValidationManager from './validation/Index.js';
+import ValidationManager from './validators/Index.js';
 import studies from './data/studies.json' assert { type: 'json' };
 
 export const scores = {
