@@ -45,9 +45,7 @@ class StudyService {
     private output: Output[] = [];
 
     constructor() {
-        this.studiesData.map(study => {
-           this.output.push(new ValidationManager(study).toJson()) ;
-        });
+        this.output = this.studiesData.map(study => new ValidationManager(study).toJson());
     }
 
     toJson(): Output[] {
