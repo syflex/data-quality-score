@@ -20,7 +20,6 @@ export default class ApplicationDeadline implements IStudyValidationService {
         const fiveMonthsBeforeStartDate = new Date(startDate);
         fiveMonthsBeforeStartDate.setMonth(fiveMonthsBeforeStartDate.getMonth() - 5);
         const isValid = deadlineDate.getTime() === fiveMonthsBeforeStartDate.getTime() || deadlineDate < fiveMonthsBeforeStartDate;
-        console.log(`Application Deadline: ${this.applicationDeadline} - Start Date: ${this.startDate} - Score: ${isValid ? this.score : 0}`);
         
         return isValid ? this.score : 0;
     }
