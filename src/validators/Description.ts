@@ -10,6 +10,7 @@ export default class Description implements IStudyValidationService {
     }
 
     calculate(): number {
-       return this.description ? this.score : 0;
+        const words = this.description.split(' ');
+        return words.length > 5 ? this.score : 0;
     }
 }
